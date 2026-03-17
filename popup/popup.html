@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="popup.css" />
+    <script src="lucide.min.js"></script>
+  </head>
+
+  <body class="app">
+    <aside class="sidebar">
+      <button id="new-note" class="btn-primary">
+        <i data-lucide="plus"></i>
+        New Note
+      </button>
+
+      <ul id="notes-list" class="notes-list"></ul>
+    </aside>
+
+    <section class="editor">
+      <div id="host" class="host"></div>
+
+      <input id="title" maxlength="60" class="title-input" />
+
+      <textarea
+        id="content"
+        maxlength="5000"
+        class="content-area"
+        placeholder="Write note..."
+      ></textarea>
+
+      <div class="actions">
+        <button id="copy" class="btn-secondary">
+          <i data-lucide="copy"></i>
+          Copy
+        </button>
+
+        <button id="email" class="btn-secondary">
+          <i data-lucide="mail"></i>
+          Email
+        </button>
+      </div>
+
+      <div class="tasks">
+        <h3>Tasks</h3>
+
+        <input
+          id="todo-input"
+          placeholder="Add task + Enter"
+          class="todo-input"
+        />
+
+        <ul id="todo-list" class="todo-list"></ul>
+      </div>
+    </section>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

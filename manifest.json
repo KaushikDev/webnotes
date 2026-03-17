@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "WebNotes",
+  "version": "1.0.0",
+  "description": "Contextual notes and todos for websites",
+  "permissions": ["storage", "tabs", "sidePanel"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "WebNotes"
+  },
+  "side_panel": {
+    "default_path": "popup/popup.html"
+  },
+  "icons": {
+    "128": "icons/icon128.png"
+  }
+}

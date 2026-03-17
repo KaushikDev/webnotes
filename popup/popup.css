@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+:root {
+  --bg-app: #ffffff;
+  --bg-sidebar: #f7f7f5;
+  --bg-hover: #efefed;
+  --bg-element: #ffffff;
+  --border: #e6e6e6;
+  --text-main: #37352f;
+  --text-muted: #9b9a97;
+  --primary: #2383e2;
+  --primary-hover: #1b6fbf;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-app: #191919;
+    --bg-sidebar: #202020;
+    --bg-hover: #2f2f2f;
+    --bg-element: #252525;
+    --border: #333333;
+    --text-main: #ffffff;
+    --text-muted: #9b9b9b;
+    --primary: #0a84ff;
+    --primary-hover: #007aff;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body.app {
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  font-family: var(--font-family);
+  background: var(--bg-app);
+  color: var(--text-main);
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+.sidebar {
+  width: 250px;
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border);
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow-y: auto;
+}
+
+.notes-list li {
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text-main);
+  transition: background 0.1s ease;
+}
+
+.notes-list li:hover {
+  background: var(--bg-hover);
+}
+
+button {
+  all: unset;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+}
+
+button i {
+  width: 16px;
+  height: 16px;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: 8px 12px;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn-secondary {
+  background: var(--bg-sidebar);
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+.btn-secondary:hover {
+  background: var(--bg-hover);
+}
+
+.editor {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 48px;
+  overflow-y: auto;
+  background: var(--bg-app);
+}
+
+.host {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.title-input {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--text-main);
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 0;
+  margin-bottom: 16px;
+  font-family: inherit;
+}
+
+.title-input::placeholder {
+  color: var(--border);
+}
+
+.content-area {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--text-main);
+  resize: none;
+  font-size: 15px;
+  line-height: 1.6;
+  outline: none;
+  padding: 0;
+  font-family: inherit;
+  min-height: 200px;
+  margin-bottom: 24px;
+}
+
+.content-area::placeholder {
+  color: var(--text-muted);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 32px;
+}
+
+.tasks h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.todo-input {
+  background: var(--bg-element);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  font-size: 14px;
+  color: var(--text-main);
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+
+.todo-input:focus {
+  border-color: var(--primary);
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.todo-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--text-main);
+}
+
+.todo-list input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary);
+  cursor: pointer;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+}
