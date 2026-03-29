@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "WebNotes",
+  "name": "TakeWebNotes",
   "version": "1.0.0",
   "description": "Contextual notes and todos for websites",
   "permissions": ["storage", "tabs", "sidePanel"],
@@ -8,7 +8,7 @@
     "service_worker": "background.js"
   },
   "action": {
-    "default_title": "WebNotes"
+    "default_title": "TakeWebNotes"
   },
   "side_panel": {
     "default_path": "popup/popup.html"
